@@ -1,0 +1,82 @@
+html body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+}
+html body{
+    background-color:#011126;
+    color:white;
+    
+}
+#clock{
+    text-align: center;
+    font-size: 15em;
+    font-family: 'Roboto Mono', monospace;
+    
+}
+.classModeContainer{
+    margin-top: 3%;
+    line-height: 8em;
+    font-size: 1.5em;
+}
+.classModeWeather{
+    margin-left: 3%;
+}
+.libraryModeWeather{
+    margin-top: 7%;
+}
+p, h2{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 4em;    
+    }
+#date{
+    font-size: 4.5em;
+}
+
+.col-md-6{
+    text-align: center;
+    border-top: 1px solid white;
+}
+h3{
+    font-size:3em;
+}
+#closingTime{
+    font-size:3em;
+}
+.row{
+    margin-top: 10%;
+}
+.rightborder{
+    
+}
+.leftborder{
+    border-left: 1px solid white;
+}
+.nightModeBody{
+    background-color: black;
+    color: white;
+}
+.nightTimeCirlce{
+    border: 5px solid yellow;
+    
+}
+.nightTime{
+    
+    width: 60%;
+    
+   
+    float: left;
+    text-align: center;
+    font-size: 15em;
+    font-family: 'Roboto Mono', monospace;
+   
+    
+}
+#{
+   float: left;    
+}
+#{
+    float: right;
+}
