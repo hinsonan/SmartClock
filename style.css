@@ -58,9 +58,12 @@ h3{
     background-color: black;
     color: white;
 }
-.nightTimeCirlce{
+.nightTimeCircle{
     border: 5px solid yellow;
-    
+    width: 55%;
+    border-radius: 1000px;
+    height: 600px;
+    float: left;
 }
 .nightTime{
     
