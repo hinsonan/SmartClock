@@ -69,9 +69,9 @@ function displayWeather(){
     $.getJSON('http://api.openweathermap.org/data/2.5/weather?zip=38340,us&appid=4ccbe25bc75a2d2c9933c73c4b541d6b&units=imperial', function(data){ 
         $('#weather').text(Math.round(data.main.temp)) + $('#weather').append("&deg;", 'F');
         console.log(data.weather[0].main);
-        if(data.weather[0].main === "Clouds"){
-            $('#weather').prepend('<img src=img/sunny.png />');
-        }
+        //if(data.weather[0].main === "Clouds"){
+            $('#weather').prepend('<img src=img/sunny.png class="classImage LibraryImage nightImage" />');
+        //}
     });
         
     

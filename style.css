@@ -22,6 +22,7 @@ html body{
 }
 .classModeWeather{
     margin-left: 3%;
+    color:yellow;
 }
 .libraryModeWeather{
     margin-top: 7%;
@@ -37,7 +38,6 @@ p, h2{
 
 .col-md-6{
     text-align: center;
-    border-top: 1px solid white;
 }
 h3{
     font-size:3em;
@@ -49,10 +49,11 @@ h3{
     margin-top: 10%;
 }
 .rightborder{
-    
+    border-top: 1px solid white;
 }
 .leftborder{
     border-left: 1px solid white;
+    border-top: 1px solid white;
 }
 .nightModeBody{
     background-color: black;
@@ -77,9 +78,10 @@ h3{
    
     
 }
-#{
-   float: left;    
+.classImage{
+  width: 15%;
+  margin-top: -9%;
 }
-#{
-    float: right;
+.nightImage{
+    width: 10%;
 }
