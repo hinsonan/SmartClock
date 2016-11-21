@@ -69,9 +69,33 @@ function displayWeather(){
     $.getJSON('http://api.openweathermap.org/data/2.5/weather?zip=38340,us&appid=4ccbe25bc75a2d2c9933c73c4b541d6b&units=imperial', function(data){ 
         $('#weather').text(Math.round(data.main.temp)) + $('#weather').append("&deg;", 'F');
         console.log(data.weather[0].main);
-        //if(data.weather[0].main === "Clouds"){
-            $('#weather').prepend('<img src=img/sunny.png class="classImage LibraryImage nightImage" />');
-        //}
+        if(data.weather[0].description === "clear sky"){
+            $('#weather').prepend('<img src=img/clearSky.png class="classImage LibraryImage nightImage" />');
+        }
+        else if(data.weather[0].description === "few clouds"){
+             $('#weather').prepend('<img src=img/fewClouds.png class="classImage LibraryImage nightImage" />');
+        }
+         else if(data.weather[0].description === "scattered clouds"){
+             $('#weather').prepend('<img src=img/scatteredClouds.png class="classImage LibraryImage nightImage" />');
+        }
+         else if(data.weather[0].description === "broken clouds"){
+             $('#weather').prepend('<img src=img/brokenClouds.png class="classImage LibraryImage nightImage" />');
+        }
+         else if(data.weather[0].description === "shower rain"){
+             $('#weather').prepend('<img src=img/showerRain.png class="classImage LibraryImage nightImage" />');
+        }
+         else if(data.weather[0].description === "rain"){
+             $('#weather').prepend('<img src=img/rain.png class="classImage LibraryImage nightImage" />');
+        }
+         else if(data.weather[0].description === "thunderstorm"){
+             $('#weather').prepend('<img src=img/thunderStorm.png class="classImage LibraryImage nightImage" />');
+        }
+         else if(data.weather[0].description === "snow"){
+             $('#weather').prepend('<img src=img/snow.png class="classImage LibraryImage nightImage" />');
+        }
+         else if(data.weather[0].description === "mist"){
+             $('#weather').prepend('<img src=img/mist.png class="classImage LibraryImage nightImage" />');
+        }
     });
         
     
