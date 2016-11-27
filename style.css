@@ -97,3 +97,37 @@ h3{
 .nightWeather{
     padding-top: 2%;
 }
+.barContainer{
+    margin-top: 10%;
+    text-align: center;
+    
+  
+    
+}
+.hourBar{
+    width: 10%;
+    height: 500px;
+    background-color: red;
+    display: inline-block;
+    border-radius: 10px;
+}
+.minuteBar{
+    width: 10%;
+    height: 500px;
+    background-color: green;
+    display: inline-block;
+    border-radius: 10px;
+    margin-left: 20%;
+
+}
+.heightBar{
+    
+    height: 500px;
+    background-color: yellow;
+    display: inline-block;
+    border-radius: 10px;
+}
+.FancyTime{
+    font-size: 15em;
+    
+}

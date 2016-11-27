@@ -4,6 +4,7 @@ function clock(){
     var hrs = time.getHours();
     var min = time.getMinutes();
     var sec = time.getSeconds();
+    var ms = time.getMilliseconds();
     
     //if hours is below 12 subtract 12 to show standard time
     if(hrs > 12){
@@ -25,6 +26,13 @@ function clock(){
     //displays the clock
     $("#clock").text(hrs + ":" + min + ":" + sec);
     $(".nightTime").text(hrs + ":" + min);
+    $(".FancyTime").text(hrs + ":" + min);
+    
+    //below is the code used for the fancy mode
+    
+    $(".hourBar").height(min * 8.3);
+    $(".minuteBar").height(sec * 8.3);
+    
 }
 
 function displayDate(){
