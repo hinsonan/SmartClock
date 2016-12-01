@@ -110,11 +110,38 @@ function displayWeather(){
     
 }
 
+function switchPage(){
+    //if the space bar or left and right arrow keys are pressed it will change the page
+    var data = window.location;
+    var page1 = "index.html";
+    var page2 = "LibraryMode.html";
+    var page3 = "NightMode.html";
+    var page4 = "Fancy.html";
+    $("body").keyup(function(key){
+        if(key.which === 37 || key.which === 39 || key.which === 32){
+            console.log(data.pathname);
+            if (data.pathname === '/index.html'){
+                window.location.assign(page2);
+            }
+            else if (data.pathname === '/LibraryMode.html'){
+                window.location.assign(page3);
+            }
+            else if (data.pathname === '/NightMode.html'){
+                window.location.assign(page4);
+            }
+            else if (data.pathname === '/Fancy.html'){
+                window.location.assign(page1);
+            }
+            
+        }
+    });
+}
 
 function main(){
     setInterval(clock, 500);
     displayDate();
     displayWeather();
+    switchPage();
 }
 
 $(document).ready(main);
