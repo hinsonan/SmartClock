@@ -119,7 +119,7 @@ function switchPage(){
     var page4 = "Fancy.html";
     $("body").keyup(function(key){
         if(key.which === 37 || key.which === 39 || key.which === 32){
-            console.log(data.pathname);
+            
             if (data.pathname === '/index.html'){
                 window.location.assign(page2);
             }
@@ -137,7 +137,63 @@ function switchPage(){
     });
 }
 
+function getLionAlerts() {
+       $("#lionAlert").hide();
+        //get the rss feed
+
+        var rssURL = "http://www.getrave.com/rss/FHU/channel1";
+
+        $.ajax({
+            type: "GET",
+            url: rssURL,
+            dataType: "xml",
+            error: function () {
+                console.log("ERROR: Unable to load RSS feed. Check the URL and your connection status.");
+            },
+            success: function (xml) {
+
+                var $items = $(xml).find("item");
+
+                $items.each(function () {
+                    // extract the alert title
+                    var lionAlertTitle = $(this).find("title").text();
+                    console.log(lionAlertTitle);
+
+                    // extract the alert description 
+                    var lionAlertDescription = $(this).find("description").text();
+                    console.log(lionAlertDescription);
+
+                    var lionAlertDateString = ($(this).find("pubDate").text());
+                    
+                    //parses the date into milliseconds
+                    var lionAlertTime = Date.parse(lionAlertDateString);
+                   
+                    var date = new Date();
+                    var currentTime = date.getTime();
+                    
+                    console.log(currentTime - lionAlertTime);
+                    
+                    
+                    //if the lion alert is older than 10 minutes its hidden
+                    if((currentTime - lionAlertTime) < 600000 ){
+
+                        // display title and description on page
+                        $("#lionAlert h1").html(lionAlertTitle);
+                        $("#lionAlert h2").text(lionAlertDescription);
+
+                        // show the alert 
+                        $("#lionAlert").slideDown(2000);
+                   }
+
+                });
+
+            }
+        });
+
+    }
+
 function main(){
+    getLionAlerts();
     setInterval(clock, 500);
     displayDate();
     displayWeather();
