@@ -37,11 +37,11 @@ html body{
 }
 .classModeWeather{
     margin-left: 3%;
-    color:#ea0e0e;
+    color:deepskyblue;
 }
 .libraryModeWeather{
     margin-top: 7%;
-    color:#ea0e0e;
+    color:deepskyblue;
 }
 .libContainer{
     font-size:1.5em;
@@ -113,7 +113,7 @@ h3{
     padding-top: 2%;
 }
 .barContainer{
-    
+    border-top: 1px solid white;
     text-align: center;
     
   
@@ -135,14 +135,30 @@ h3{
     margin-left: 20%;
 
 }
-.heightBar{
-    
+
+.heightBar{    
     height: 500px;
     background-color: yellow;
     display: inline-block;
     border-radius: 10px;
 }
 .FancyTime{
-    font-size: 15em;
+    font-size: 15em;    
+}
+.plusOne h3{    
     
+}
+.plusOne{
+    text-align: center;
+    
+    
+}
+#hourPlus{
+    margin-left: 20%;
+    margin-bottom: -5%;
+    width:30%;
+}
+#secondPlus{
+    width: 30%;
+    margin-left: 50%;
 }
