@@ -191,6 +191,11 @@ function getLionAlerts() {
                     
                     //if the lion alert is older than 10 minutes its hidden
                     if((currentTime - lionAlertTime) < 600000 ){
+                        //hide the unimportant elements
+                        $(".classModeContainer").hide();
+                        $(".libContainer").hide();
+                        $(".nightContent").hide();
+                        $("#clock").hide();
 
                         // display title and description on page
                         $("#lionAlert h1").html(lionAlertTitle);

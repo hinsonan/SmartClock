@@ -23,12 +23,14 @@ html body{
     color:black;
     margin-top:1%;
     box-shadow: 5px 5px 2px red;
+    margin-top:200px;
 }
 #lionAlert h1{
-    
+    font-size: 10em;
 }
 #lionAlert h2{
-    font-size: 2em;
+    font-size: 3em;
+    padding: 20px;
 }
 .classModeContainer{
     margin-top: 3%;
