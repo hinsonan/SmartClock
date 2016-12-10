@@ -30,23 +30,33 @@ function clock(){
     
     //below is the code used for the fancy mode
     
-    $("#hourPlus").hide();
-    $("#secondPlus").hide();
+    //this hides the +1 elements
+    $(".hourPlus").hide();
+    $(".secondPlus").hide();
     
-    
+    //based on the second and minute the bars will go up in size
     $(".hourBar").height(min * 8.3);
     $(".minuteBar").height(sec * 8.3);
     
-    var minuteHeight = $(".minuteBar").height(sec * 8.3);
-    // console.log(minuteHeight);
+    //stores the height of the bars
+    var minuteHeight = $(".minuteBar").height();
+    var hourHeight = $(".hourBar").height();
     
-    /*
-    if($(".minuteBar").height() >= 400){
-        $("#secondPlus").slideUp(1000);
-        $("#secondPlus").hide();        
+    
+    //adds a plus one to signify the minute going up
+    
+    if( minuteHeight == 490){
+        
+        $(".secondPlus").fadeIn(300);
+                      
     }
-    */
+    if(hourHeight == 490){
+        $(".hourPlus").fadeIn(300);
+    }
+    
 }
+
+
 
 function displayDate(){
     var date = new Date();
@@ -127,7 +137,10 @@ function displayWeather(){
 
 function switchPage(){
     //if the space bar or left and right arrow keys are pressed it will change the page
+    
+    //stores the location of the current page
     var data = window.location;
+    //stores the paths of the different pages to a variable
     var page1 = "index.html";
     var page2 = "LibraryMode.html";
     var page3 = "NightMode.html";
@@ -213,10 +226,14 @@ function getLionAlerts() {
     }
 
 function main(){
-    getLionAlerts();
-    setInterval(clock, 500);
-    displayDate();
-    displayWeather();
+    //calls lion alerts every 5 minutes
+    setInterval(getLionAlerts(), 300000);
+    //calls clock every second
+    setInterval(clock, 1000);
+    //calls a new date every 10 min
+    setInterval(displayDate(), 600000);
+    //calls the weather every 5 minutes
+    setInterval(displayWeather(), 300000);
     switchPage();
 }
 
