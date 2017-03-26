@@ -148,6 +148,8 @@ function switchPage(){
     $("body").keyup(function(key){
         if(key.which === 37 || key.which === 39 || key.which === 32){
             
+            
+            
             if (data.pathname === '/index.html'){
                 window.location.assign(page2);
             }
